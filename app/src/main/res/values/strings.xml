@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Serunews</string>
+    <string name="something_wrong">Terjadi Kesalahan</string>
+    <string name="date_detail">3 Days Ago</string>
+</resources>
