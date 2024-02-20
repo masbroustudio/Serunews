@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
+}
+apply from: '../shared_dependencies.gradle'
+
+android {
+    namespace 'com.serunews.newsapp'
+    compileSdk 33
+
+    lintOptions {
+        abortOnError false
+        absolutePaths false
+        lintConfig file('lint.xml')
+    }
+
+    defaultConfig {
+        applicationId "com.serunews.newsapp"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://jakpost.vercel.app/api/\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
+    }
+    kotlinOptions {
+        jvmTarget = "18"
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    dynamicFeatures = [':favorite']
+}
+
+dependencies {
+
+    implementation project(":core")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
