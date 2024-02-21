@@ -3,7 +3,7 @@ package com.serunews.core.source.remote.response
 import com.google.gson.annotations.SerializedName
 
 
-data class NewsTechResponse(
+data class IndoNewsResponse(
 
 	@field:SerializedName("important")
 	val important: String,

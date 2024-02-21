@@ -13,11 +13,8 @@ import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
 class FavoriteActivity : AppCompatActivity() {
-
-
     private val favoriteViewModel: FavoriteViewModel by viewModel()
     private lateinit var binding: ActivityFavoriteBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,24 +23,22 @@ class FavoriteActivity : AppCompatActivity() {
 
         loadKoinModules(favoriteModule)
 
-        if (this != null){
-            val newsTechAdapter = NewsTechAdapter()
-            newsTechAdapter.onItemClick = { selectedData ->
-                val intent = Intent(this@FavoriteActivity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
-                startActivity(intent)
-            }
+        val newsTechAdapter = NewsTechAdapter()
+        newsTechAdapter.onItemClick = { selectedData ->
+            val intent = Intent(this@FavoriteActivity, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_DATA, selectedData)
+            startActivity(intent)
+        }
 
-            favoriteViewModel.favoriteNewsTech.observe(this@FavoriteActivity) { dataNewsTech ->
-                newsTechAdapter.setData(dataNewsTech)
-                binding.viewEmpty.root.visibility = if (dataNewsTech.isNotEmpty()) View.GONE else View.VISIBLE
-            }
+        favoriteViewModel.favoriteNewsTech.observe(this@FavoriteActivity) { dataNewsTech ->
+            newsTechAdapter.setData(dataNewsTech)
+            binding.viewEmpty.root.visibility = if (dataNewsTech.isNotEmpty()) View.GONE else View.VISIBLE
+        }
 
-            with(binding.rvNews){
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
-                adapter = newsTechAdapter
-            }
+        with(binding.rvNews){
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = newsTechAdapter
         }
     }
 }

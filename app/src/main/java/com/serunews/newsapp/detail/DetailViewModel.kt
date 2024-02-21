@@ -1,11 +1,11 @@
 package com.serunews.newsapp.detail
 
 import androidx.lifecycle.ViewModel
-import com.serunews.core.domain.model.NewsTech
-import com.serunews.core.domain.usecase.NewsTechUseCase
+import com.serunews.core.domain.model.IndoNews
+import com.serunews.core.domain.usecase.NewsIndoUseCase
 
-class DetailViewModel(private val newsTechUseCase: NewsTechUseCase): ViewModel() {
+class DetailViewModel(private val newsIndoUseCase: NewsIndoUseCase): ViewModel() {
 
-    fun setFavoriteNewsTech(newsTechTittle: NewsTech, newStatus:Boolean) =
-        newsTechUseCase.setFavoriteNewsTech(newsTechTittle, newStatus)
+    fun setFavoriteNewsTech(indoNewsTittle: IndoNews, newStatus:Boolean) =
+        newsIndoUseCase.setFavoriteNewsIndo(indoNewsTittle, newStatus)
 }

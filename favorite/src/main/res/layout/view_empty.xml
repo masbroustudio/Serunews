@@ -9,7 +9,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:text="@string/no_favorite"
+        android:text="@string/subtitle_favorite"
         android:textSize="18sp" />
 
 </RelativeLayout>

@@ -2,8 +2,8 @@ package com.serunews.newsapp.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.serunews.core.domain.usecase.NewsTechUseCase
+import com.serunews.core.domain.usecase.NewsIndoUseCase
 
-class HomeViewModel(newsTechUseCase: NewsTechUseCase) : ViewModel() {
-    val newsTech = newsTechUseCase.getAllNewsTech().asLiveData()
+class HomeViewModel(newsIndoUseCase: NewsIndoUseCase) : ViewModel() {
+    val newsTech = newsIndoUseCase.getAllNewsTech().asLiveData()
 }

@@ -1,11 +1,10 @@
 package com.serunews.core.source.remote.network
 
-import com.serunews.core.source.remote.response.NewsTechResponse
-import retrofit2.Call
+import com.serunews.core.source.remote.response.IndoNewsResponse
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("category/business/tech")
-    suspend fun getNews(): NewsTechResponse
+    @GET("category/indonesia/politics")
+    suspend fun getNews(): IndoNewsResponse
 }

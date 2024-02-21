@@ -1,15 +1,15 @@
 package com.serunews.core.utils
 
-import com.serunews.core.domain.model.NewsTech
-import com.serunews.core.source.local.entity.NewsTechEntity
 import com.serunews.core.source.remote.response.PostsItem
+import com.serunews.core.domain.model.IndoNews
+import com.serunews.core.source.local.entity.NewsIndoEntity
 
 
 object DataMapper {
-    fun mapResponsesToEntities(input: List<PostsItem>): List<NewsTechEntity> {
-        val newsTechList = ArrayList<NewsTechEntity>()
+    fun mapResponsesToEntities(input: List<PostsItem>): List<NewsIndoEntity> {
+        val newsTechList = ArrayList<NewsIndoEntity>()
         input.map {
-            val newsTech = NewsTechEntity(
+            val newsTech = NewsIndoEntity(
                 title = it.title,
                 category = it.category,
                 headline = it.headline,
@@ -24,9 +24,9 @@ object DataMapper {
         return newsTechList
     }
 
-    fun mapEntitiesToDomain(input: List<NewsTechEntity>): List<NewsTech> =
+    fun mapEntitiesToDomain(input: List<NewsIndoEntity>): List<IndoNews> =
         input.map {
-            NewsTech(
+            IndoNews(
                 title = it.title,
                 category = it.category,
                 headline = it.headline,
@@ -38,7 +38,7 @@ object DataMapper {
             )
         }
 
-    fun mapDomainToEntity(input: NewsTech) = NewsTechEntity(
+    fun mapDomainToEntity(input: IndoNews) = NewsIndoEntity(
         title = input.title,
         category = input.category,
         headline = input.headline,

@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "news_tech")
-data class NewsTechEntity (
+@Entity(tableName = "news_indo")
+data class NewsIndoEntity (
 
     @ColumnInfo("image")
     var image: String,

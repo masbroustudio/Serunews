@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.serunews.core.domain.model.NewsTech
+import com.serunews.core.domain.model.IndoNews
 import com.serunews.newsapp.R
 import com.serunews.newsapp.databinding.ActivityDetailBinding
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -19,27 +19,27 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val detailNewsTech = intent.getParcelableExtra<NewsTech>(EXTRA_DATA)
-        showDetailNewsTech(detailNewsTech)
+        val detailIndoNews = intent.getParcelableExtra<IndoNews>(EXTRA_DATA)
+        showDetailNewsTech(detailIndoNews)
     }
 
-    private fun showDetailNewsTech(detailNewsTech: NewsTech?){
-        detailNewsTech?.let {
-            supportActionBar?.title = detailNewsTech.title
+    private fun showDetailNewsTech(detailIndoNews: IndoNews?){
+        detailIndoNews?.let {
+            supportActionBar?.title = detailIndoNews.title
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-            binding.content.tvDateDetail.text = detailNewsTech.pusblisedAt
-            binding.content.tvDetailTitle.text = detailNewsTech.title
-            binding.content.tvDetailDescription.text = detailNewsTech.headline
+            binding.content.tvDateDetail.text = detailIndoNews.pusblisedAt
+            binding.content.tvDetailTitle.text = detailIndoNews.title
+            binding.content.tvDetailDescription.text = detailIndoNews.headline
             Glide.with(this@DetailActivity)
-                .load(detailNewsTech.image)
+                .load(detailIndoNews.image)
                 .into(binding.ivDetailImage)
 
-            var statusFavorite = detailNewsTech.isFavorite
+            var statusFavorite = detailIndoNews.isFavorite
             setStatusFavorite(statusFavorite)
             binding.fab.setOnClickListener {
                 statusFavorite = !statusFavorite
-                detailViewModel.setFavoriteNewsTech(detailNewsTech, statusFavorite)
+                detailViewModel.setFavoriteNewsTech(detailIndoNews, statusFavorite)
                 setStatusFavorite(statusFavorite)
             }
         }

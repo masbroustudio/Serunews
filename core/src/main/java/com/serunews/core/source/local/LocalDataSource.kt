@@ -1,19 +1,19 @@
 package com.serunews.core.source.local
 
-import com.serunews.core.source.local.entity.NewsTechEntity
-import com.serunews.core.source.local.room.NewsTechDao
+import com.serunews.core.source.local.entity.NewsIndoEntity
+import com.serunews.core.source.local.room.IndoNewsDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource(private val newsTechDao: NewsTechDao) {
+class LocalDataSource(private val indoNewsDao: IndoNewsDao) {
 
-    fun getAllNewsTech(): Flow<List<NewsTechEntity>> = newsTechDao.getAllNewsTech()
+    fun getAllNewsTech(): Flow<List<NewsIndoEntity>> = indoNewsDao.getAllNewsTech()
 
-    fun getFavoriteNewsTech(): Flow<List<NewsTechEntity>> = newsTechDao.getFavoriteNewsTech()
+    fun getFavoriteNewsTech(): Flow<List<NewsIndoEntity>> = indoNewsDao.getFavoriteNewsTech()
 
-    suspend fun insertNewsTech(newsTechList: List<NewsTechEntity>) = newsTechDao.insertNewsTech(newsTechList)
+    suspend fun insertNewsTech(newsTechList: List<NewsIndoEntity>) = indoNewsDao.insertNewsTech(newsTechList)
 
-    fun setFavoriteNewsTech(newsTech: NewsTechEntity, newState: Boolean) {
+    fun setFavoriteNewsTech(newsTech: NewsIndoEntity, newState: Boolean) {
         newsTech.isFavorite = newState
-        newsTechDao.updateFavoriteNewsTech(newsTech)
+        indoNewsDao.updateFavoriteNewsTech(newsTech)
     }
 }

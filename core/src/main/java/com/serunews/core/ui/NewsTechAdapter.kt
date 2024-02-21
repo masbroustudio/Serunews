@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.serunews.core.R
 import com.serunews.core.databinding.NewsItemListBinding
-import com.serunews.core.domain.model.NewsTech
+import com.serunews.core.domain.model.IndoNews
 
 class NewsTechAdapter: RecyclerView.Adapter<NewsTechAdapter.NewsTechViewHolder>() {
 
-    private var listData = ArrayList<NewsTech>()
-    var onItemClick: ((NewsTech) -> Unit)? = null
+    private var listData = ArrayList<IndoNews>()
+    var onItemClick: ((IndoNews) -> Unit)? = null
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(newListData: List<NewsTech>?) {
+    fun setData(newListData: List<IndoNews>?) {
         if (newListData == null) return
         listData.clear()
         listData.addAll(newListData)
@@ -37,7 +37,7 @@ class NewsTechAdapter: RecyclerView.Adapter<NewsTechAdapter.NewsTechViewHolder>(
 
     inner class NewsTechViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = NewsItemListBinding.bind(itemView)
-        fun bind(data: NewsTech) {
+        fun bind(data: IndoNews) {
             with(binding) {
                 Glide.with(itemView.context)
                     .load(data.image)

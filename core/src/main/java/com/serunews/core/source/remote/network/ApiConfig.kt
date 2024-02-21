@@ -23,6 +23,7 @@ object ApiConfig {
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideOkHttpClient())
             .build()
+
         return retrofit.create(ApiService::class.java)
     }
 

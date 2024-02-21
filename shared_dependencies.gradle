@@ -33,8 +33,6 @@ dependencies {
     implementation "io.insert-koin:koin-android-viewmodel:2.1.6"
     implementation "io.insert-koin:koin-androidx-ext:2.1.6"
 
-    //leak canary
-
     //multi dex
     implementation 'com.android.support:multidex:2.0.1'
 }

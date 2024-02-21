@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class NewsTech(
+data class IndoNews(
     val image: String,
     val premiumBadge: String,
     val pusblisedAt: String,
