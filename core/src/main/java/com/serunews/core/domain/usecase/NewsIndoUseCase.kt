@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface NewsIndoUseCase {
 
-    fun getAllNewsTech(): Flow<com.serunews.core.source.Resource<List<IndoNews>>>
+    fun getAllNewsIndo(): Flow<com.serunews.core.source.Resource<List<IndoNews>>>
 
     fun getFavoriteNewsTech(): Flow<List<IndoNews>>
 

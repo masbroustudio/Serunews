@@ -6,7 +6,7 @@ import com.serunews.core.domain.repository.INewsIndoRepository
 
 class NewsIndoInteracator(private val newsIndoRepository: INewsIndoRepository): NewsIndoUseCase {
 
-    override fun getAllNewsTech() = newsIndoRepository.getAllNewsTech()
+    override fun getAllNewsIndo() = newsIndoRepository.getAllNewsTech()
 
     override fun getFavoriteNewsTech() = newsIndoRepository.getFavoriteNewsTech()
 

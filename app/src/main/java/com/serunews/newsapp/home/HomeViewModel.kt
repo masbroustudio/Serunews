@@ -5,5 +5,5 @@ import androidx.lifecycle.asLiveData
 import com.serunews.core.domain.usecase.NewsIndoUseCase
 
 class HomeViewModel(newsIndoUseCase: NewsIndoUseCase) : ViewModel() {
-    val newsTech = newsIndoUseCase.getAllNewsTech().asLiveData()
+    val newsIndo = newsIndoUseCase.getAllNewsIndo().asLiveData()
 }

@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
                     setCurrentFragment(HomeFragment())
                 }
                 R.id.favorite -> {
-
                     val uri = Uri.parse("newsapp://favorite")
                     startActivity(Intent(Intent.ACTION_VIEW, uri))
                 }

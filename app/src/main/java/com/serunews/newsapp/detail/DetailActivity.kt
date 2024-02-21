@@ -1,7 +1,7 @@
 package com.serunews.newsapp.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.serunews.core.domain.model.IndoNews
@@ -20,10 +20,10 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val detailIndoNews = intent.getParcelableExtra<IndoNews>(EXTRA_DATA)
-        showDetailNewsTech(detailIndoNews)
+        showDetailNewsIndo(detailIndoNews)
     }
 
-    private fun showDetailNewsTech(detailIndoNews: IndoNews?){
+    private fun showDetailNewsIndo(detailIndoNews: IndoNews?) {
         detailIndoNews?.let {
             supportActionBar?.title = detailIndoNews.title
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -39,7 +39,7 @@ class DetailActivity : AppCompatActivity() {
             setStatusFavorite(statusFavorite)
             binding.fab.setOnClickListener {
                 statusFavorite = !statusFavorite
-                detailViewModel.setFavoriteNewsTech(detailIndoNews, statusFavorite)
+                detailViewModel.setFavoriteNewsIndo(detailIndoNews, statusFavorite)
                 setStatusFavorite(statusFavorite)
             }
         }
@@ -47,9 +47,19 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
         if (statusFavorite) {
-            binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.baseline_favorite_24))
+            binding.fab.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.baseline_favorite_24
+                )
+            )
         } else {
-            binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.baseline_favorite_border_24))
+            binding.fab.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this,
+                    R.drawable.baseline_favorite_border_24
+                )
+            )
         }
     }
 

@@ -1,6 +1,5 @@
 package com.serunews.newsapp.di
 
-
 import com.serunews.core.domain.usecase.NewsIndoInteracator
 import com.serunews.core.domain.usecase.NewsIndoUseCase
 import com.serunews.newsapp.detail.DetailViewModel

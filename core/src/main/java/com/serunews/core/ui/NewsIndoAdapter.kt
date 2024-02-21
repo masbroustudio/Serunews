@@ -10,7 +10,7 @@ import com.serunews.core.R
 import com.serunews.core.databinding.NewsItemListBinding
 import com.serunews.core.domain.model.IndoNews
 
-class NewsTechAdapter: RecyclerView.Adapter<NewsTechAdapter.NewsTechViewHolder>() {
+class NewsIndoAdapter : RecyclerView.Adapter<NewsIndoAdapter.NewsTechViewHolder>() {
 
     private var listData = ArrayList<IndoNews>()
     var onItemClick: ((IndoNews) -> Unit)? = null
@@ -26,9 +26,11 @@ class NewsTechAdapter: RecyclerView.Adapter<NewsTechAdapter.NewsTechViewHolder>(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ) = NewsTechViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.news_item_list, parent, false))
+    ) = NewsTechViewHolder(
+        LayoutInflater.from(parent.context).inflate(R.layout.news_item_list, parent, false)
+    )
 
-    override fun onBindViewHolder(holder: NewsTechAdapter.NewsTechViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NewsIndoAdapter.NewsTechViewHolder, position: Int) {
         val data = listData[position]
         holder.bind(data)
     }

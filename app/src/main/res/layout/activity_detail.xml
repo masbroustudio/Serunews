@@ -12,7 +12,8 @@
         android:layout_height="360dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        tools:src="@tools:sample/avatars"/>
+        tools:ignore="ImageContrastCheck"
+        tools:src="@tools:sample/avatars" />
 
     <include android:id="@+id/content" layout="@layout/content_detail_news" />
 
@@ -23,6 +24,7 @@
         android:layout_margin="16dp"
         app:layout_anchor="@id/iv_detail_image"
         app:layout_anchorGravity="bottom|start"
-        app:srcCompat="@drawable/baseline_favorite_border_24" />
+        app:srcCompat="@drawable/baseline_favorite_border_24"
+        android:contentDescription="@string/fabbutton" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
