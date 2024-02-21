@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Serunews</string>
     <string name="something_wrong">Terjadi Kesalahan</string>
-    <string name="date_detail">3 Days Ago</string>
+    <string name="date_detail">Date Detail</string>
     <string name="fabbutton">fabButton</string>
     <string name="home">Home</string>
     <string name="favorite">Favorite</string>
