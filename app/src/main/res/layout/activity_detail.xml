@@ -25,6 +25,6 @@
         android:contentDescription="@string/fabbutton"
         app:layout_anchor="@id/iv_detail_image"
         app:layout_anchorGravity="bottom|right"
-        app:srcCompat="@drawable/baseline_favorite_border_24" />
+        app:srcCompat="@drawable/ic_star_outline" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

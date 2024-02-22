@@ -57,14 +57,14 @@ class DetailActivity : AppCompatActivity() {
             binding.fab.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
-                    R.drawable.baseline_favorite_24
+                    R.drawable.ic_star_filled
                 )
             )
         } else {
             binding.fab.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
-                    R.drawable.baseline_favorite_border_24
+                    R.drawable.ic_star_outline
                 )
             )
         }

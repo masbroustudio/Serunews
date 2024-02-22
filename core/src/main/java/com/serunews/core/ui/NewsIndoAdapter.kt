@@ -45,7 +45,6 @@ class NewsIndoAdapter : RecyclerView.Adapter<NewsIndoAdapter.NewsTechViewHolder>
                     .load(data.foto)
                     .into(imgNews)
                 tvTitle.text = data.judul
-                tvDescription.text = data.headline
                 tvDate.text = data.rilisberita
 
             }
