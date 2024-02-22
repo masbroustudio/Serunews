@@ -1,9 +1,9 @@
 package com.serunews.favorite.favorite
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.serunews.core.ui.NewsIndoAdapter
 import com.serunews.favorite.databinding.ActivityFavoriteBinding
@@ -32,10 +32,11 @@ class FavoriteActivity : AppCompatActivity() {
 
         favoriteViewModel.favoriteNewsTech.observe(this@FavoriteActivity) { dataNewsTech ->
             newsIndoAdapter.setData(dataNewsTech)
-            binding.viewEmpty.root.visibility = if (dataNewsTech.isNotEmpty()) View.GONE else View.VISIBLE
+            binding.viewEmpty.root.visibility =
+                if (dataNewsTech.isNotEmpty()) View.GONE else View.VISIBLE
         }
 
-        with(binding.rvNews){
+        with(binding.rvNews) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = newsIndoAdapter

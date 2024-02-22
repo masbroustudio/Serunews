@@ -24,7 +24,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
         multiDexEnabled true
 
-        buildConfigField("String", "BASE_URL", "\"https://jakpost.vercel.app/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://serunews.free.beeceptor.com/\"")
     }
 
     buildTypes {

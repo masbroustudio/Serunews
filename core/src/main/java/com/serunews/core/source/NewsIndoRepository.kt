@@ -17,26 +17,28 @@ class NewsIndoRepository(
     private val appExecutors: AppExecutors
 ) : INewsIndoRepository {
 
-    override fun getAllNewsTech(): Flow<Resource<List<IndoNews>>> = object : NetworkBoundResource<List<IndoNews>, List<PostsItem>>(appExecutors){
-        override fun loadFromDB(): Flow<List<IndoNews>> {
-            return localDataSource.getAllNewsTech().map {
-                DataMapper.mapEntitiesToDomain(it)
+    override fun getAllNewsTech(): Flow<Resource<List<IndoNews>>> =
+        object : NetworkBoundResource<List<IndoNews>, List<PostsItem>>(appExecutors) {
+
+            override fun loadFromDB(): Flow<List<IndoNews>> {
+                return localDataSource.getAllNewsTech().map {
+                    DataMapper.mapEntitiesToDomain(it)
+                }
             }
-        }
 
-        override fun shouldFetch(data: List<IndoNews>?): Boolean {
-            return data == null || data.isEmpty()
-        }
+            override fun shouldFetch(data: List<IndoNews>?): Boolean {
+                return data == null || data.isEmpty()
+            }
 
-        override suspend fun createCall(): Flow<ApiResponse<List<PostsItem>>> {
-            return remoteDataSource.getAllNewsTech()
-        }
+            override suspend fun createCall(): Flow<ApiResponse<List<PostsItem>>> {
+                return remoteDataSource.getAllNewsTech()
+            }
 
-        override suspend fun saveCallResult(data: List<PostsItem>) {
-            val newsTechList = DataMapper.mapResponsesToEntities(data)
-            localDataSource.insertNewsTech(newsTechList)
-        }
-    }.asFlow()
+            override suspend fun saveCallResult(data: List<PostsItem>) {
+                val newsTechList = DataMapper.mapResponsesToEntities(data)
+                localDataSource.insertNewsTech(newsTechList)
+            }
+        }.asFlow()
 
     override fun getFavoriteNewsTech(): Flow<List<IndoNews>> {
         return localDataSource.getFavoriteNewsTech().map {

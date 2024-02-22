@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("category/indonesia/politics")
+    @GET("indonews")
     suspend fun getNews(): IndoNewsResponse
 }

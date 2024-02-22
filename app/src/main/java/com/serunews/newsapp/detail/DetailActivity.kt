@@ -17,26 +17,31 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         val detailIndoNews = intent.getParcelableExtra<IndoNews>(EXTRA_DATA)
+
         showDetailNewsIndo(detailIndoNews)
     }
 
     private fun showDetailNewsIndo(detailIndoNews: IndoNews?) {
         detailIndoNews?.let {
-            supportActionBar?.title = detailIndoNews.title
+            supportActionBar?.title = detailIndoNews.judul
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-            binding.content.tvDateDetail.text = detailIndoNews.pusblisedAt
-            binding.content.tvDetailTitle.text = detailIndoNews.title
+            binding.content.tvDateDetail.text = detailIndoNews.rilisberita
+            binding.content.tvDetailTitle.text = detailIndoNews.judul
             binding.content.tvDetailDescription.text = detailIndoNews.headline
+
             Glide.with(this@DetailActivity)
-                .load(detailIndoNews.image)
+                .load(detailIndoNews.foto)
                 .into(binding.ivDetailImage)
 
             var statusFavorite = detailIndoNews.isFavorite
+
             setStatusFavorite(statusFavorite)
+            
             binding.fab.setOnClickListener {
                 statusFavorite = !statusFavorite
                 detailViewModel.setFavoriteNewsIndo(detailIndoNews, statusFavorite)

@@ -5,37 +5,36 @@ import com.google.gson.annotations.SerializedName
 
 data class IndoNewsResponse(
 
-	@field:SerializedName("important")
-	val important: String,
+    @field:SerializedName("important")
+    val important: String,
 
-	@field:SerializedName("posts")
-	val posts: List<PostsItem>,
+    @field:SerializedName("posts")
+    val posts: List<PostsItem>,
 
-	@field:SerializedName("status")
-	val status: Int
+    @field:SerializedName("status")
+    val status: Int
 )
 
 data class PostsItem(
+    @field:SerializedName("aksesurl")
+    val aksesurl: String,
 
-	@field:SerializedName("image")
-	val image: String,
+    @field:SerializedName("judul")
+    val judul: String,
 
-	@field:SerializedName("premium_badge")
-	val premiumBadge: String,
+    @field:SerializedName("foto")
+    val foto: String,
 
-	@field:SerializedName("pusblised_at")
-	val pusblisedAt: String,
+    @field:SerializedName("headline")
+    val headline: String,
 
-	@field:SerializedName("link")
-	val link: String,
+    @field:SerializedName("kategori")
+    val kategori: String,
 
-	@field:SerializedName("title")
-	val title: String,
+    @field:SerializedName("rilisberita")
+    val rilisberita: String,
 
-	@field:SerializedName("category")
-	val category: String,
-
-	@field:SerializedName("headline")
-	val headline: String
+    @field:SerializedName("news_badge")
+    val news_badge: String,
 )
 

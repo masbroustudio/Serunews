@@ -16,12 +16,14 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 val response = apiService.getNews()
                 val dataArray = response.posts
-                if (dataArray.isNotEmpty()){
+
+                if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.posts))
                 } else {
                     emit(ApiResponse.Empty)
                 }
-            } catch (e : Exception){
+
+            } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }

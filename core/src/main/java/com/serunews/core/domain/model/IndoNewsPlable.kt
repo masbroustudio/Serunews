@@ -5,12 +5,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class IndoNews(
-    val image: String,
-    val premiumBadge: String,
-    val pusblisedAt: String,
-    val link: String,
-    val title: String,
-    val category: String,
+    val aksesurl: String,
+    val judul: String,
+    val foto: String,
     val headline: String,
+    val kategori: String,
+    val rilisberita: String,
+    val news_badge: String,
     val isFavorite: Boolean
 ) : Parcelable

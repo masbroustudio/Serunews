@@ -42,11 +42,11 @@ class NewsIndoAdapter : RecyclerView.Adapter<NewsIndoAdapter.NewsTechViewHolder>
         fun bind(data: IndoNews) {
             with(binding) {
                 Glide.with(itemView.context)
-                    .load(data.image)
+                    .load(data.foto)
                     .into(imgNews)
-                tvTitle.text = data.title
+                tvTitle.text = data.judul
                 tvDescription.text = data.headline
-                tvDate.text = data.pusblisedAt
+                tvDate.text = data.rilisberita
 
             }
         }

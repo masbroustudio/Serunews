@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.serunews.newsapp.databinding.ActivityMainBinding
 import com.serunews.newsapp.home.HomeFragment
@@ -25,10 +25,11 @@ class MainActivity : AppCompatActivity() {
         setCurrentFragment(HomeFragment())
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.home -> {
                     setCurrentFragment(HomeFragment())
                 }
+
                 R.id.favorite -> {
                     val uri = Uri.parse("newsapp://favorite")
                     startActivity(Intent(Intent.ACTION_VIEW, uri))
@@ -38,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setCurrentFragment(fragment: Fragment)=
+    private fun setCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment,fragment)
+            replace(R.id.flFragment, fragment)
             commit()
         }
 
@@ -51,12 +52,14 @@ class MainActivity : AppCompatActivity() {
                     Intent.ACTION_POWER_CONNECTED -> {
                         Log.d("MainActivity", "Power connected")
                     }
+
                     Intent.ACTION_POWER_DISCONNECTED -> {
                         Log.d("MainActivity", "Power disconnected")
                     }
                 }
             }
         }
+        
         val intentFilter = IntentFilter()
         intentFilter.apply {
             addAction(Intent.ACTION_POWER_CONNECTED)
