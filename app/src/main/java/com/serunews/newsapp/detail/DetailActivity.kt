@@ -33,6 +33,8 @@ class DetailActivity : AppCompatActivity() {
             binding.content.tvDateDetail.text = detailIndoNews.rilisberita
             binding.content.tvDetailTitle.text = detailIndoNews.judul
             binding.content.tvDetailDescription.text = detailIndoNews.headline
+            binding.content.tvDetailCategory.text = detailIndoNews.kategori
+            binding.content.tvDetailNewsbadge.text = detailIndoNews.news_badge
 
             Glide.with(this@DetailActivity)
                 .load(detailIndoNews.foto)

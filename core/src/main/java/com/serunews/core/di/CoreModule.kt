@@ -24,12 +24,14 @@ val databaseModule = module {
     single {
         val passphrase: ByteArray = SQLiteDatabase.getBytes("serunewsapp123".toCharArray())
         val factory = SupportFactory(passphrase)
+
         Room.databaseBuilder(
             androidContext(),
             IndoNewsDatabase::class.java, "SerunewsDB.db"
         ).fallbackToDestructiveMigration()
             .openHelperFactory(factory)
             .build()
+
     }
 }
 

@@ -40,6 +40,24 @@
             android:layout_marginEnd="24dp"
             android:text="@string/headline_news" />
 
+        <TextView
+            android:id="@+id/tv_detail_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/category_news" />
+
+        <TextView
+            android:id="@+id/tv_detail_newsbadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/badge_news" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
