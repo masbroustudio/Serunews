@@ -46,6 +46,6 @@ abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecut
 
     protected abstract suspend fun saveCallResult(data: RequestType)
 
-    fun asFlow(): Flow<com.serunews.core.source.Resource<ResultType>> = result
+    fun asFlow(): Flow<Resource<ResultType>> = result
 
 }

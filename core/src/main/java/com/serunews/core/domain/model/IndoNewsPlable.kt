@@ -1,7 +1,7 @@
 package com.serunews.core.domain.model
 
+import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class IndoNews(

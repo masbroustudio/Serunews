@@ -1,5 +1,6 @@
 package com.serunews.newsapp.detail
 
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -20,7 +21,12 @@ class DetailActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val detailIndoNews = intent.getParcelableExtra<IndoNews>(EXTRA_DATA)
+        val detailIndoNews: IndoNews? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra(EXTRA_DATA, IndoNews::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(EXTRA_DATA)
+        }
 
         showDetailNewsIndo(detailIndoNews)
     }
